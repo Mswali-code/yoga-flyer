@@ -1,0 +1,108 @@
+:root {
+    --background: #DCE2DB;
+    --peach: #E5CFC3;
+    --text-dark: #4B4B4B;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    background-color: var(--background);
+    text-align: center;
+    font-weight: 600;
+}
+  
+.flyer-header {
+    background-color: var(--peach);
+    color: var(--text-dark);
+    padding: 1.5rem 2.5rem;
+    margin: 0 auto 2rem;
+    display: inline-block;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+}
+  
+.flyer-main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background);
+    position: relative;
+    overflow: hidden;
+}
+  
+.flyer-title {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 2rem;
+}
+  
+.flyer-title .small-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+}
+  
+.flyer-title .big-text {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--white);
+ }
+  
+.yoga-graphic {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 2rem;
+}
+  
+.yoga-graphic img {
+    width: 100%;
+    max-width: 400px;
+}
+  
+.yoga-graphic::before {
+    content: "";
+    position: absolute;
+    width: clamp(230px, 60vw, 380px);
+    height: clamp(230px, 60vw, 380px);
+    background-color: var(--peach);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    z-index: -1;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+.flyer-details {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+  
+.flyer-main::before,
+.flyer-main::after {
+    content: "";
+    position: absolute;
+    width: clamp(70px, 20vw, 250px);
+    height: clamp(70px, 20vw, 250px);
+    background-color: var(--peach);
+    border-radius: 100% 0 0 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.flyer-main::before {
+    left: 0;
+    transform: rotate(90deg);
+}
+
+.flyer-main::after {
+    right: 0;
+    transform: rotate(0deg);
+}
